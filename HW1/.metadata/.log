@@ -1,0 +1,454 @@
+!SESSION 2023-03-10 18:16:52.404 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-03-10 18:17:18.864
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2023-03-10 18:17:19.625
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2023-03-10 18:17:19.632
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2023-03-10 18:17:21.450
+!MESSAGE Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+!STACK 0
+javax.usb.UsbException: Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+	at com.mcreations.usb.windows.JavaxUsb.loadLibrary(JavaxUsb.java:391)
+	at com.mcreations.usb.windows.JavaxUsb.initialise(JavaxUsb.java:316)
+	at com.mcreations.usb.windows.WindowsUsbServices.<init>(WindowsUsbServices.java:51)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at javax.usb.UsbHostManager.createUsbServices(UsbHostManager.java:76)
+	at javax.usb.UsbHostManager.getUsbServices(UsbHostManager.java:35)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.addUsbServicesListener(UsbDeviceDetectService.java:44)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.access$0(UsbDeviceDetectService.java:21)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService$2.run(UsbDeviceDetectService.java:75)
+
+!ENTRY org.eclipse.ui.navigator.resources 4 0 2023-03-10 18:17:25.035
+!MESSAGE Could not acquire INavigatorContentService: Project Explorer not found.
+
+!ENTRY org.eclipse.ui 4 4 2023-03-10 18:17:25.501
+!MESSAGE Bad extension specification
+!SUBENTRY 1 com.andestech.ide.tracer.ui 4 0 2023-03-10 18:17:25.501
+!MESSAGE startup class must implement org.eclipse.ui.IStartup
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-10 18:17:58.159
+!MESSAGE Indexed 'Factorial_Iterative' (1 sources, 1 headers) in 0.079 sec: 3 declarations; 3 references; 0 unresolved inclusions; 8 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-10 18:18:07.667
+!MESSAGE Indexed 'Factorial_Recursive' (1 sources, 1 headers) in 0.009 sec: 3 declarations; 3 references; 0 unresolved inclusions; 8 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:52.694
+!MESSAGE Vep2Conf Command Line: [C:\Andestech\AndeSight_STD_v320\sid\ins\vep2conf.exe, C:\Andestech\AndeSight_STD_v320\vep\tmpl\ADP-AE350-NX25F.vep, -s, os, -a, v5, -o, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:52.695
+!MESSAGE vep2conf command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:52.917
+!MESSAGE vep2conf command after calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:53.082
+!MESSAGE Simulator-SID Command Line: [C:\Andestech\AndeSight_STD_v320\sid\sid.exe, -f, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf, --portrange=9900:49151]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:53.083
+!MESSAGE Simulator-SID command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:21:53.141
+!MESSAGE Simulator-SID command after calls Spawner API.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:21:54.350
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:21:56.233
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:29:30.188
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:29:36.685
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:30:12.895
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:30:15.914
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:31:20.443
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:31:25.313
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:31:32.300
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:31:34.269
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:33:19.708
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:33:25.890
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:33:49.361
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:33:51.411
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:34:23.850
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:34:25.647
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:34:36.735
+!MESSAGE Failed to execute MI command:
+-var-create - * addi
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:34:37.172
+!MESSAGE Failed to execute MI command:
+-var-create - * c
+
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2023-03-10 18:34:50.744
+!MESSAGE Unable to locate file: /home/sqa/build-ast320/build-mculib-64/source-packages/gcc-7.3.0-riscv-ast-v3_2_0-branch-official/libgcc/config/riscv/save-restore.S
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:35:03.699
+!MESSAGE Failed to execute MI command:
+-var-create - * return
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:35:04.280
+!MESSAGE Failed to execute MI command:
+-var-create - * n
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:35:10.164
+!MESSAGE Failed to execute MI command:
+-var-create - *
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:35:14.052
+!MESSAGE Failed to execute MI command:
+-var-create - * mv
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:41:33.292
+!MESSAGE Failed to execute MI command:
+-var-create - * mv
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:41:34.094
+!MESSAGE Failed to execute MI command:
+-var-create - *
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:41:37.064
+!MESSAGE Failed to execute MI command:
+-var-create - * bnec
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:45:04.406
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:45:06.537
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:46:02.968
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:46:05.276
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+!SESSION 2023-03-10 18:47:14.976 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-03-10 18:47:19.185
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.core.resources 2 10035 2023-03-10 18:47:19.301
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 2 2023-03-10 18:47:19.940
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2023-03-10 18:47:19.945
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2023-03-10 18:47:21.579
+!MESSAGE Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+!STACK 0
+javax.usb.UsbException: Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+	at com.mcreations.usb.windows.JavaxUsb.loadLibrary(JavaxUsb.java:391)
+	at com.mcreations.usb.windows.JavaxUsb.initialise(JavaxUsb.java:316)
+	at com.mcreations.usb.windows.WindowsUsbServices.<init>(WindowsUsbServices.java:51)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at javax.usb.UsbHostManager.createUsbServices(UsbHostManager.java:76)
+	at javax.usb.UsbHostManager.getUsbServices(UsbHostManager.java:35)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.addUsbServicesListener(UsbDeviceDetectService.java:44)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.access$0(UsbDeviceDetectService.java:21)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService$2.run(UsbDeviceDetectService.java:75)
+
+!ENTRY org.eclipse.ui 4 4 2023-03-10 18:47:25.051
+!MESSAGE Bad extension specification
+!SUBENTRY 1 com.andestech.ide.tracer.ui 4 0 2023-03-10 18:47:25.051
+!MESSAGE startup class must implement org.eclipse.ui.IStartup
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:54.885
+!MESSAGE Vep2Conf Command Line: [C:\Andestech\AndeSight_STD_v320\sid\ins\vep2conf.exe, C:\Andestech\AndeSight_STD_v320\vep\tmpl\ADP-AE350-NX25F.vep, -s, os, -a, v5, -o, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:54.887
+!MESSAGE vep2conf command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:55.163
+!MESSAGE vep2conf command after calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:55.327
+!MESSAGE Simulator-SID Command Line: [C:\Andestech\AndeSight_STD_v320\sid\sid.exe, -f, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf, --portrange=9900:49151]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:55.328
+!MESSAGE Simulator-SID command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-10 18:47:55.377
+!MESSAGE Simulator-SID command after calls Spawner API.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:47:56.540
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:47:58.187
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:48:58.526
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:49:02.659
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:50:23.476
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:50:29.637
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:51:01.609
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:51:04.641
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:51:54.203
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:51:56.413
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:53:02.400
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:53:05.033
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:53:39.287
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:53:42.178
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:54:23.764
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:54:27.183
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:55:13.238
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-10 18:55:16.808
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+!SESSION 2023-03-12 01:31:03.100 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2023-03-12 01:31:08.103
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2023-03-12 01:31:09.272
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2023-03-12 01:31:09.277
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2023-03-12 01:31:11.650
+!MESSAGE Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+!STACK 0
+javax.usb.UsbException: Error while loading shared library <usbJNI.dll> : 
+C:\Users\wengm\.andesight\ast3.2.0_std\configuration\org.eclipse.osgi\115\0\.cp\os\win32\x86_64\usbJNI.dll: Can't find dependent libraries
+	at com.mcreations.usb.windows.JavaxUsb.loadLibrary(JavaxUsb.java:391)
+	at com.mcreations.usb.windows.JavaxUsb.initialise(JavaxUsb.java:316)
+	at com.mcreations.usb.windows.WindowsUsbServices.<init>(WindowsUsbServices.java:51)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at javax.usb.UsbHostManager.createUsbServices(UsbHostManager.java:76)
+	at javax.usb.UsbHostManager.getUsbServices(UsbHostManager.java:35)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.addUsbServicesListener(UsbDeviceDetectService.java:44)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService.access$0(UsbDeviceDetectService.java:21)
+	at com.andestech.ide.tm.rse.service.UsbDeviceDetectService$2.run(UsbDeviceDetectService.java:75)
+
+!ENTRY org.eclipse.ui 4 4 2023-03-12 01:31:16.202
+!MESSAGE Bad extension specification
+!SUBENTRY 1 com.andestech.ide.tracer.ui 4 0 2023-03-12 01:31:16.202
+!MESSAGE startup class must implement org.eclipse.ui.IStartup
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.489
+!MESSAGE Vep2Conf Command Line: [C:\Andestech\AndeSight_STD_v320\sid\ins\vep2conf.exe, C:\Andestech\AndeSight_STD_v320\vep\tmpl\ADP-AE350-NX25F.vep, -s, os, -a, v5, -o, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.490
+!MESSAGE vep2conf command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.749
+!MESSAGE vep2conf command after calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.909
+!MESSAGE Simulator-SID Command Line: [C:\Andestech\AndeSight_STD_v320\sid\sid.exe, -f, D:\CompArch\HW1\.metadata\vep.conf\ADP-AE350-NX25F.vep.conf, --portrange=9900:49151]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.910
+!MESSAGE Simulator-SID command before calls Spawner API.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2023-03-12 01:32:40.971
+!MESSAGE Simulator-SID command after calls Spawner API.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:32:42.327
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:32:44.111
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:33:23.776
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:33:25.418
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:38:50.236
+!MESSAGE Failed to execute MI command:
+-gdb-set target-charset X-WINDOWS-950
+
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2023-03-12 01:38:52.502
+!MESSAGE Failed to execute MI command:
+-list-thread-groups --available
+
