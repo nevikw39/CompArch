@@ -1,0 +1,232 @@
+\documentclass[12pt, a4paper]{article}
+
+\title{\textsc{Computer Architecture} Homework 1}
+\author{110062219}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{geometry}[margin=2cm]
+
+\lstset{
+	breaklines=true,
+	basicstyle=\ttfamily,
+}
+
+\definecolor{nthu}{HTML}{7F1084}
+
+% \renewcommand{\ttdefault}{pcr}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Install and use AndeSight\texttrademark\ for RISC-V program development}
+
+\subsection{Effects of application program (programming style) on performance}
+
+\begin{table}[H]
+\caption{Number of instructions \& cycles took by the two functions}
+\centering
+\begin{tabular}{c||c|c}
+Func. & \# Ins. & \# Cyc. \\
+\hline\hline
+\texttt{recur()} & 136 & 245 \\
+\texttt{iter()} & 46 & 85
+\end{tabular}
+\label{tab:inc_cyc}
+\end{table}
+
+It's trivial that a recursive function requires more instructions, and thus more cycles, due to the overhead of maintaining the call stack.
+
+\subsection{Effects of application program on performance}
+
+CPU times could be computed simply by dividing the number of cycles by the clock rate.
+
+\begin{table}[H]
+\caption{Average CPI \& CPU time by the two functions}
+\centering
+\begin{tabular}{c||c|c}
+Func. & CPI & CPU Time [ns] \\
+\hline\hline
+\texttt{recur()} & 1.80 & 122.5 \\
+\texttt{iter()} & 1.85 & 42.5
+\end{tabular}
+\label{tab:cpi_time}
+\end{table}
+
+\subsection{Effects of compiler on performance}
+
+By taking a look at the disassembled codes, we could easily found see that both the (first) argument and the returned value are stored in the register \texttt{a0}.
+
+\subsection{Effects of compiler on performance (cont.)}
+
+\begin{table}[H]
+\caption{}
+\centering
+\begin{tabular}{c||c|c|c|c}
+Optimizations & Func. & \# Ins. & \# Cyc. & CPI \\
+\hline\hline
+\texttt{-O0} & \texttt{recur()} & 242 & 411 & 1.70 \\
+\texttt{-O0} & \texttt{iter()} & 150 & 287 & 1.91 \\
+\texttt{-O1} & \texttt{recur()} & 145 & 222 & 1.53 \\
+\texttt{-O1} & \texttt{iter()} & 36 & 69 & 1.92
+\end{tabular}
+\label{tab:optimizations}
+\end{table}
+
+\subsection{Effects of instruction set architecture (ISA) on performance}
+
+\subsubsection{What is the difference between RISC and CISC?}
+
+\begin{enumerate}
+\item As their names suggest, CISC instructions set is more complex than RISC.
+\item Instructions of RISC tend to have a lower CPI than the ones of CISC.
+\item The length of instructions of RISC is fixed whereas the length of ones of CISC is variable. As a consequence, RISC could implement pipelining better.
+\end{enumerate}
+
+\subsubsection{How ISA design influences the performance qualitatively?}
+
+\begin{table}[H]
+\caption{}
+\centering
+\begin{tabular}{c||c|c|c}
+ & IC & CPI & Cycle Time \\
+\hline\hline
+CISC & more & more & more \\
+RISC & less & less & less
+\end{tabular}
+\label{tab:qualitative}
+\end{table}
+
+\subsubsection{The new instruction}
+
+I assume that ``it increases the execution cycles of those instructions by
+25\%'' means that the CPI of the new instruction is 1.25 times that of the origin. Otherwise, if the total cycles increase, then the CPU time must be longer.
+
+Suppose the total number of instructions, cycles to be $I$, $C$ respectively.  Then the instruction handling function calls would have a CPI of $\frac{3C}{4I}$ and the CPU time would be $\frac{C}{\text{Clock Rate}}$.
+
+For the new instruction, the number of it would be $0.4I\times0.65=0.26I$ while its CPI would be $\frac{3C}{4I}\times1.25=0.9375\frac{C}{I}$. Thus we have the total number of cycles being $0.26I\times0.9375\frac{C}{I}+0.7C=0.94375C<C$. So we should introduce the new instruction.
+
+\subsection{Effects of great ideas on computer performance}
+
+Based on the observations in debugging, I found that \texttt{sum *= i} (i.e., \texttt{mulw a4,a4,a5}) cost a cycle and \texttt{i++} (i.e., \texttt{c.addiw a5,1} and \texttt{c.nop}) cost 2 cycles in total, while the branch (\texttt{bge a0,a5,0x104b0}) cost 4 cycles.
+
+\subsubsection{Pipelined execution}
+
+The iteration would fork into 2 threads. One core would perform the multiplication while the other would increment the index. Then the program would join and branch.
+
+So the number of cycles would be $\max\{1,2\}+4=6$. This would give us a speedup of $\frac{7}{6}$. It's obvious we could never achieve a 2-speedup, firmly constrained by \textbf{Amdahl's Law}.
+
+\subsubsection{Parallel execution}
+
+If we distribute the 10 iterations into 4 cores, then a core should iterate at most $\lceil\frac{10}{4}\rceil=3$ thrice. Moreover, we need an additional cycle for B, D to get the partial results. Lastly, we need another cycle again for D to obtain the final result.
+
+Therefore, we need $7\times3+1+1=23$ cycles. The reduction percentage is $1-\frac{23}{7\times10}\approx67\%$. Similarly according to \textbf{Amdahl's Law}, we must fail to gain a speedup of 4.
+
+\section{Compare the performance and battery lives of the two mobile systems}
+
+\subsection{Peak frequency of the most performant block of cores}
+
+\begin{table}[H]
+\caption{Snapdragon\textregistered\ 8 Gen 2}
+\centering
+\begin{tabular}{c||c|c|c|c}
+ & Coretex-X3 & Coretex-A715 & Coretex-A710 & Coretex-A510 \\
+\hline
+Frequency [Mhz] & 3200 & 2800 & 2800 & 2000 \\
+\end{tabular}
+\label{tab:8gen2}
+\end{table}
+
+\begin{table}[H]
+\caption{Apple\textregistered\ A16 Bionic}
+\centering
+\begin{tabular}{c||c|c}
+ & Everest & Sawtooth \\
+\hline
+Frequency [Mhz] & 3460 & 2020 \\
+\end{tabular}
+\label{tab:8gen2}
+\end{table}
+
+\subsection{How long would it take to run a speech recognition on both devices?}
+
+\begin{table}[H]
+\caption{}
+\centering
+\begin{tabular}{c|c}
+Speech Recognition & Time [s] \\
+\hline\hline
+Samsung & 14180 \\
+Apple & 12290 \\
+\end{tabular}
+\label{tab:8gen2}
+\end{table}
+
+\subsection{How many clock cycles does each core take to run the program on both mobile phones?}
+
+\begin{table}[H]
+\caption{}
+\centering
+\begin{tabular}{c|c}
+Speech Recognition & \# Cycles [$10^6$] \\
+\hline\hline
+Samsung & $4.54\times10^7$ \\
+Apple & $4.25\times10^7$ \\
+\end{tabular}
+\label{tab:8gen2}
+\end{table}
+
+\subsection{Average instruction time}
+
+\begin{table}[H]
+\caption{}
+\centering
+\begin{tabularx}{\textwidth}{c||c|X|X|X|X}
+ & CPI & Highest Freq. [MHz] & Lowest Freq. [MHz] & Highest Ins. Time [$\mu s$] & Lowest Ins. Time [$\mu s$] \\
+\hline\hline
+Samsung & 0.9 & 3200 & 2000 & $2.81\times10^{-4}$ & $4.50\times10^{-4}$ \\
+Apple & 3.1 & 3460 & 2020 & $8.96\times10^{-4}$ & $1.53\times10^{-4}$ \\
+\end{tabularx}
+\label{tab:8gen2}
+\end{table}
+
+\subsection{Calculate the relative performance of the two mobile phones}
+
+$$\sqrt{\frac{141.8}{122.9}\times\frac{243.5}{251.3}}\approx1.06$$
+
+\section{Amdahl’s Law}
+
+\subsection{Which class of instructions you would want to improve first and why?}
+
+We should improve C fist, since its product of proportion and CPI is the largest, which means it consumes the most cycles.
+
+\subsection{What is the speedup?}
+
+The cycle proportion of C, D is $\frac{65\times3}{65\times3+10\times2+25}=0.81$.
+
+$$S=\frac{1}{(1-0.81)+\frac{0.81}{1.5}}\approx1.37$$
+
+\section{CPI}
+
+\subsection{How much must we improve the CPI of FP to run two times faster?}
+
+The cycle proportion of FP is $\frac{75\times4}{75\times4+120\times3+70\times5+45}\approx0.28$. By \textbf{Amdahl’s Law}, we have $$2=\frac{1}{(1-0.28)+\frac{0.28}{s}}$$. There's no positive solution to $s$.
+
+\subsection{How much is the execution time of the program improved?}
+
+The cycle proportions of INT, FP and L/S, branch are $\frac{120\times3+75\times4}{75\times4+120\times3+70\times5+45}\approx0.63$ and $\frac{70\times5+45}{75\times4+120\times3+70\times5+45}\approx0.37$. So the percentage of CPU time reduction is $$0.63\times0.29+0.37\times0.56\approx0.39$$.
+
+The original CPU time is $\frac{75\times4+120\times3+70\times5+45}{4\times10^3}\approx0.26$ second. Hence we would reduce $0.26\times0.39=0.10$ second and the improved program would run for 0.16 second.
+
+\end{document}
