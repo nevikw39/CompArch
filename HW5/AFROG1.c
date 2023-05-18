@@ -11,13 +11,13 @@ int afrog1()
 {
 	int *a0 = arr;
 	int64_t a1 = n,
-			s0, // dp[i-2]
+			s0,     // dp[i-2]
 	    	s1 = 0, // dp[i-1]
-	    	s2,		// dp[i]
-    		s3,		// arr[i-2]
-	    	s4,		// arr[i-1]
-	    	s5,		// arr[i]
-	    	t0, t1, t2, t3, t4, t5, t6;
+		    s2,		// dp[i]
+	    	s3,		// arr[i-2]
+		    s4,		// arr[i-1]
+		    s5,		// arr[i]
+		    t0, t1, t2, t3, t4, t5, t6;
 
 	a0 = a0 + 2;
 	a1 = a1 - 2;
@@ -30,10 +30,10 @@ int afrog1()
 	t1 = s2 ^ t0;
 	s2 = t1 - t0;
 
-loop:
-	if (!a1)
+	if (!n)
 		goto loop_tail;
 
+loop:
 	s0 = s1;
 	s1 = s2;
 
@@ -64,7 +64,9 @@ loop:
 
 	a0 = a0 + 1;
 	a1 = a1 - 1;
-	goto loop;
+
+	if (a1)
+		goto loop;
 loop_tail:
 
 	return s2;
