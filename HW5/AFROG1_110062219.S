@@ -42,9 +42,9 @@ _start:
     addi a0, a0, 8  # a0 += 2 * sizeof(int)
     addi a1, a1, -2 # a1 -= 2
 
-loop:
     beq a1, zero, loop_tail
 
+loop:
     mv s3, s4
     mv s4, s5
     lw s5, 0(a0)
@@ -75,8 +75,8 @@ loop:
 
     addi a0, a0, 4  # a0 += sizeof(int)
     addi a1, a1, -1 # a1--
-    j loop
 
+    bne a1, zero, loop
 loop_tail:
 
     la a0, str

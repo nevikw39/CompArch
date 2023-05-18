@@ -30,10 +30,10 @@ int afrog1()
 	t1 = s2 ^ t0;
 	s2 = t1 - t0;
 
-loop:
-	if (!a1)
+	if (!n)
 		goto loop_tail;
 
+loop:
 	s0 = s1;
 	s1 = s2;
 
@@ -64,7 +64,9 @@ loop:
 
 	a0 = a0 + 1;
 	a1 = a1 - 1;
-	goto loop;
+
+	if (a1)
+		goto loop;
 loop_tail:
 
 	return s2;
