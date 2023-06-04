@@ -28,12 +28,12 @@ str: .string "output: "
 # Start your coding below, don't change anything upper except testing different testcase
 _start:
     la a0, arr
+    lw a1, n
+    li s1, 0
 
     # // s2 = abs(a0[-1] - a0[-2]);
     lw s4, 0(a0)
     lw s5, 4(a0)
-    lw a1, n # Reorder to avoid load-use hazard
-    li s1, 0 # Reorder to avoid load-use hazard
     sub s2, s4, s5
     srai t0, s2, 63
     xor t1, s2, t0
@@ -45,11 +45,12 @@ _start:
     beq a1, zero, loop_tail
 
 loop:
+    mv s0, s1
+
     mv s3, s4
     mv s4, s5
     lw s5, 0(a0)
-
-    mv s0, s1
+    
     mv s1, s2
 
     # // t0 = dp[i - 1] + abs(arr[i] - arr[i - 1]);

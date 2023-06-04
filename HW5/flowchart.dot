@@ -1,0 +1,29 @@
+digraph {
+    splines=ortho;
+    node [shape=box]
+
+    Start [style=rounded]
+    init [label="a0 := arr, a1 := n\ns1 := 0, s2 := abs(a0[0]-a0[1])"]
+    init_cont [label="a0 += 2 * sizeof(int), a1 -= 2"]
+    beq [shape=diamond, label="a1 == 0"]
+
+    upd_arr [label="s3 := s4, s4 := s5, s5 := *arr"]
+    upd_dp [label="s0 := s1, s1 := s2"]
+    t0 [label="t0 := dp[i-1] + abs(arr[i]-arr[i-1])"]
+    t1 [label="t1 := dp[i-2] + abs(arr[i]-arr[i-2])"]
+    s2 [label="s2 := min(t0, t1)"]
+    upd [label="a0 += sizeof(int), --a1"]
+    bne [shape=diamond, label="a1 != 0"]
+
+    print [shape=parallelogram, label="Print str, s2"]
+    End [style=rounded]
+
+    Start -> init -> init_cont -> beq
+    beq -> upd_arr [label=False]
+    beq -> print [xlabel=True, weight=0]
+
+    upd_arr -> upd_dp -> t0 -> t1 -> s2 -> upd -> bne
+    bne -> print [label=False]
+    bne -> upd_arr [xlabel=True, weight=0]
+    print -> End
+}
